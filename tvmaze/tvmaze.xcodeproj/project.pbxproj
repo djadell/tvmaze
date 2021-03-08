@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
-		3721BB7225F6C63200DE969F /* UItvshowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* UItvshowCell.xib */; };
+		3721BB7225F6C63200DE969F /* UIListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* UIListViewCell.xib */; };
+		3721BB8225F6C87B00DE969F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8125F6C87B00DE969F /* DetailVC.swift */; };
+		3721BB8C25F6C90200DE969F /* UIListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8B25F6C90200DE969F /* UIListViewCell.swift */; };
 		376189E425F5203800546C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E325F5203800546C08 /* AppDelegate.swift */; };
 		376189E625F5203800546C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E525F5203800546C08 /* SceneDelegate.swift */; };
-		376189E825F5203800546C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E725F5203800546C08 /* ViewController.swift */; };
+		376189E825F5203800546C08 /* UIListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E725F5203800546C08 /* UIListVC.swift */; };
 		376189EB25F5203800546C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376189E925F5203800546C08 /* Main.storyboard */; };
 		376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 376189EC25F5203800546C08 /* tvmaze.xcdatamodeld */; };
 		376189F025F5203900546C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 376189EF25F5203900546C08 /* Assets.xcassets */; };
@@ -39,11 +41,13 @@
 
 /* Begin PBXFileReference section */
 		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
-		3721BB7125F6C63200DE969F /* UItvshowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UItvshowCell.xib; sourceTree = "<group>"; };
+		3721BB7125F6C63200DE969F /* UIListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIListViewCell.xib; sourceTree = "<group>"; };
+		3721BB8125F6C87B00DE969F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		3721BB8B25F6C90200DE969F /* UIListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIListViewCell.swift; sourceTree = "<group>"; };
 		376189E025F5203800546C08 /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		376189E325F5203800546C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		376189E525F5203800546C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		376189E725F5203800546C08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		376189E725F5203800546C08 /* UIListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIListVC.swift; sourceTree = "<group>"; };
 		376189EA25F5203800546C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		376189ED25F5203800546C08 /* tvmaze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tvmaze.xcdatamodel; sourceTree = "<group>"; };
 		376189EF25F5203900546C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,9 +91,26 @@
 			children = (
 				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
 				376189E925F5203800546C08 /* Main.storyboard */,
-				3721BB7125F6C63200DE969F /* UItvshowCell.xib */,
+				3721BB7125F6C63200DE969F /* UIListViewCell.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		3721BB8925F6C8BA00DE969F /* ListVC */ = {
+			isa = PBXGroup;
+			children = (
+				376189E725F5203800546C08 /* UIListVC.swift */,
+				3721BB8B25F6C90200DE969F /* UIListViewCell.swift */,
+			);
+			name = ListVC;
+			sourceTree = "<group>";
+		};
+		3721BB8A25F6C8CF00DE969F /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				3721BB8125F6C87B00DE969F /* DetailVC.swift */,
+			);
+			path = DetailVC;
 			sourceTree = "<group>";
 		};
 		376189D725F5203800546C08 = {
@@ -116,12 +137,11 @@
 			isa = PBXGroup;
 			children = (
 				3721BB6D25F6C1AB00DE969F /* UI */,
-				37618A1E25F5259D00546C08 /* ViewController */,
+				37618A1E25F5259D00546C08 /* ViewControllers */,
 				37618A1D25F5259400546C08 /* ViewModel */,
 				37618A1C25F5258D00546C08 /* Model */,
 				376189E325F5203800546C08 /* AppDelegate.swift */,
 				376189E525F5203800546C08 /* SceneDelegate.swift */,
-				376189E725F5203800546C08 /* ViewController.swift */,
 				376189EF25F5203900546C08 /* Assets.xcassets */,
 				376189F425F5203900546C08 /* Info.plist */,
 				376189EC25F5203800546C08 /* tvmaze.xcdatamodeld */,
@@ -162,11 +182,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		37618A1E25F5259D00546C08 /* ViewController */ = {
+		37618A1E25F5259D00546C08 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3721BB8A25F6C8CF00DE969F /* DetailVC */,
+				3721BB8925F6C8BA00DE969F /* ListVC */,
 			);
-			path = ViewController;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +296,7 @@
 			files = (
 				376189F325F5203900546C08 /* LaunchScreen.storyboard in Resources */,
 				376189F025F5203900546C08 /* Assets.xcassets in Resources */,
-				3721BB7225F6C63200DE969F /* UItvshowCell.xib in Resources */,
+				3721BB7225F6C63200DE969F /* UIListViewCell.xib in Resources */,
 				376189EB25F5203800546C08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,11 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				376189E825F5203800546C08 /* ViewController.swift in Sources */,
+				376189E825F5203800546C08 /* UIListVC.swift in Sources */,
 				3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */,
 				376189E425F5203800546C08 /* AppDelegate.swift in Sources */,
+				3721BB8C25F6C90200DE969F /* UIListViewCell.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,
+				3721BB8225F6C87B00DE969F /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

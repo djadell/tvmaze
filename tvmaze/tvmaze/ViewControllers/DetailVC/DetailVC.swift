@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  DetailVC.swift
 //  tvmaze
 //
-//  Created by David Adell Echevarria on 07/03/2021.
+//  Created by David Adell Echevarria on 08/03/2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +16,3 @@ class ViewController: UIViewController {
 
 
 }
-
