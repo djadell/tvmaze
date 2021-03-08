@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
 		376189E425F5203800546C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E325F5203800546C08 /* AppDelegate.swift */; };
 		376189E625F5203800546C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E525F5203800546C08 /* SceneDelegate.swift */; };
 		376189E825F5203800546C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E725F5203800546C08 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
 		376189E025F5203800546C08 /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		376189E325F5203800546C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		376189E525F5203800546C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,9 @@
 		376189E225F5203800546C08 /* tvmaze */ = {
 			isa = PBXGroup;
 			children = (
+				37618A1E25F5259D00546C08 /* ViewController */,
+				37618A1D25F5259400546C08 /* ViewModel */,
+				37618A1C25F5258D00546C08 /* Model */,
 				376189E325F5203800546C08 /* AppDelegate.swift */,
 				376189E525F5203800546C08 /* SceneDelegate.swift */,
 				376189E725F5203800546C08 /* ViewController.swift */,
@@ -129,6 +134,28 @@
 				37618A0A25F5203A00546C08 /* Info.plist */,
 			);
 			path = tvmazeUITests;
+			sourceTree = "<group>";
+		};
+		37618A1C25F5258D00546C08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3721BB6225F6A33000DE969F /* DBtvshow.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37618A1D25F5259400546C08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		37618A1E25F5259D00546C08 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				376189E825F5203800546C08 /* ViewController.swift in Sources */,
+				3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */,
 				376189E425F5203800546C08 /* AppDelegate.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,
