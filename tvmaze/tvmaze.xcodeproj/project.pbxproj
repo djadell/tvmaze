@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
+		3721BB7225F6C63200DE969F /* UItvshowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* UItvshowCell.xib */; };
 		376189E425F5203800546C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E325F5203800546C08 /* AppDelegate.swift */; };
 		376189E625F5203800546C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E525F5203800546C08 /* SceneDelegate.swift */; };
 		376189E825F5203800546C08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E725F5203800546C08 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
+		3721BB7125F6C63200DE969F /* UItvshowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UItvshowCell.xib; sourceTree = "<group>"; };
 		376189E025F5203800546C08 /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		376189E325F5203800546C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		376189E525F5203800546C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3721BB6D25F6C1AB00DE969F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
+				376189E925F5203800546C08 /* Main.storyboard */,
+				3721BB7125F6C63200DE969F /* UItvshowCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		376189D725F5203800546C08 = {
 			isa = PBXGroup;
 			children = (
@@ -103,15 +115,14 @@
 		376189E225F5203800546C08 /* tvmaze */ = {
 			isa = PBXGroup;
 			children = (
+				3721BB6D25F6C1AB00DE969F /* UI */,
 				37618A1E25F5259D00546C08 /* ViewController */,
 				37618A1D25F5259400546C08 /* ViewModel */,
 				37618A1C25F5258D00546C08 /* Model */,
 				376189E325F5203800546C08 /* AppDelegate.swift */,
 				376189E525F5203800546C08 /* SceneDelegate.swift */,
 				376189E725F5203800546C08 /* ViewController.swift */,
-				376189E925F5203800546C08 /* Main.storyboard */,
 				376189EF25F5203900546C08 /* Assets.xcassets */,
-				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
 				376189F425F5203900546C08 /* Info.plist */,
 				376189EC25F5203800546C08 /* tvmaze.xcdatamodeld */,
 			);
@@ -263,6 +274,7 @@
 			files = (
 				376189F325F5203900546C08 /* LaunchScreen.storyboard in Resources */,
 				376189F025F5203900546C08 /* Assets.xcassets in Resources */,
+				3721BB7225F6C63200DE969F /* UItvshowCell.xib in Resources */,
 				376189EB25F5203800546C08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
