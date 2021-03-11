@@ -11,7 +11,7 @@
         <!--ListVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ListVC" customModule="tvmaze" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListVC" id="BYZ-38-t0r" customClass="ListVC" customModule="tvmaze" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EOu-ch-Zf5" secondAttribute="bottom" id="eoi-rY-7jY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="EOu-ch-Zf5" id="Snn-Qb-Npu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,7 +41,7 @@
         <!--DetailVC-->
         <scene sceneID="1uO-O1-Ibj">
             <objects>
-                <viewController id="uf7-rc-3LX" customClass="DetailVC" customModule="tvmaze" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="uf7-rc-3LX" customClass="DetailVC" customModule="tvmaze" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IzT-0O-Ybn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +77,12 @@
                         <viewLayoutGuide key="safeArea" id="lmx-V5-XYk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="posterImageView" destination="c7u-eZ-sOK" id="NVx-QB-Lv1"/>
+                        <outlet property="ratingTitleLabel" destination="jfc-mx-hpC" id="Vac-N8-KUI"/>
+                        <outlet property="summaryTextView" destination="4mC-OH-gxU" id="2C9-SV-82y"/>
+                        <outlet property="titleLabel" destination="Vsu-yW-Asb" id="dfQ-u5-ixo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2He-is-3Vv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
