@@ -21,6 +21,23 @@ class Service: NSObject {
         getTvShowsByPage(page: page, success: success, failure: failure)
     }
     
+    func getImageWithUrl(urlString: String, success: (@escaping (UIImage) -> Void), failure: (@escaping (Error?)-> Void)) {
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                failure(error)
+                print("[\(String(describing: Service.self))] Failed to get remote image", error)
+                return
+            }
+            guard let data = data else { return }
+            
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    success(image)
+                }
+            }
+        }.resume()
+    }
     //MARK: - Private functions
     fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)){
         let urlString = "https://api.tvmaze.com/shows?page=\(page)"
@@ -39,6 +56,7 @@ class Service: NSObject {
                     success(tvShows)
                 }
             } catch let jsonError {
+                failure(jsonError)
                 print("[\(String(describing: Service.self))] Failed to decode: ", jsonError)
             }
         }.resume()

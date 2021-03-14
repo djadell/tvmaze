@@ -15,7 +15,7 @@ class ListViewCell: UITableViewCell {
     var tvShowViewModel: TvShowViewModel? {
         didSet {
             titleLabel.text = tvShowViewModel?.name
-            
+            posterImageView.getImageWithUrl(urlString: tvShowViewModel?.image ?? "")
         }
     }
     

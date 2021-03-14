@@ -11,12 +11,13 @@ import UIKit
 struct TvShowViewModel {
     let name: String
     let rating: Float
+    let image: String
     let summary: String
-    
     
     init(tvShow: DBtvshow) {
         self.name = tvShow.name ?? "--"
         self.rating = tvShow.rating?.average ?? 0.0
+        self.image = tvShow.image?.medium ?? ""
         self.summary = tvShow.summary ?? ""
     }
     
