@@ -10,9 +10,20 @@ import UIKit
 class Service: NSObject {
     static let shared = Service()
     var page: Int = 1
-    //MARK: Fetch Firts TvShows
+    
+    //MARK: - Public functions
     func fetchFirtsTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
-        let urlString = "https://api.tvmaze.com/shows?page=1"
+        getTvShowsByPage(page: page, success: success, failure: failure)
+    }
+    
+    func fetchNextTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
+        page+=1
+        getTvShowsByPage(page: page, success: success, failure: failure)
+    }
+    
+    //MARK: - Private functions
+    fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)){
+        let urlString = "https://api.tvmaze.com/shows?page=\(page)"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -32,11 +43,4 @@ class Service: NSObject {
             }
         }.resume()
     }
-    
-    func fetchNextTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
-        page+=1
-        
-        //FIXME: The page 2,3 or more...
-    }
-    
 }
