@@ -13,9 +13,7 @@ struct DBtvshow: Decodable {
     let url: String?
     let name: String?
     let rating: Rating?
-    enum image: String, Decodable {
-        case medium, original
-    }
+    let image: Image?
     let summary: String?
 }
 
@@ -23,3 +21,7 @@ struct Rating: Decodable {
     let average: Float?
 }
 
+struct Image: Decodable {
+    let medium: String?
+    let original: String?
+}
