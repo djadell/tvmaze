@@ -12,10 +12,11 @@ class ListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate static let cellID = "ListViewCell"
     
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "Tv show list"
         setupTableView()
     }
 
@@ -52,7 +53,12 @@ extension ListVC: UITableViewDataSource {
 
 extension ListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tableview didSelectRowAt indexPath:",indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "detailvc") as? DetailVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
+    
 }
 
