@@ -8,16 +8,18 @@
 import Foundation
 
 // MARK: - Model
-public struct DBtvshow: Decodable {
-    private(set) var name: String?
-    private(set) var rating: Float?
-    private(set) var summary: String?
-    enum rating {
-        case average
-    }
+struct DBtvshow: Decodable {
+    let id: Int?
+    let url: String?
+    let name: String?
+    let rating: Rating?
     enum image: String, Decodable {
         case medium, original
     }
+    let summary: String?
 }
 
+struct Rating: Decodable {
+    let average: Float?
+}
 

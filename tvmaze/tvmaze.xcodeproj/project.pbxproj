@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371E475425FE594400817039 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E475325FE594400817039 /* Service.swift */; };
 		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
 		376189E425F5203800546C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E325F5203800546C08 /* AppDelegate.swift */; };
 		376189E625F5203800546C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E525F5203800546C08 /* SceneDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		371E475325FE594400817039 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
 		376189E025F5203800546C08 /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		376189E325F5203800546C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371E474825FE589200817039 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				371E475325FE594400817039 /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		376189D725F5203800546C08 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		376189E225F5203800546C08 /* tvmaze */ = {
 			isa = PBXGroup;
 			children = (
+				371E474825FE589200817039 /* Services */,
 				37618A1E25F5259D00546C08 /* ViewController */,
 				37618A1D25F5259400546C08 /* ViewModel */,
 				37618A1C25F5258D00546C08 /* Model */,
@@ -293,6 +304,7 @@
 				376189E425F5203800546C08 /* AppDelegate.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,
+				371E475425FE594400817039 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = tvmaze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = tvmaze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

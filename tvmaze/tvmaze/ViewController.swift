@@ -12,6 +12,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //FIXME: temporally testing dev
+        Service.shared.fetchFirtsTvShows { (tvShows) in
+            //refresh table view
+            print("[DEBUG] data:",tvShows ?? [])
+        } failure: { (error) in
+            if let error = error {
+                print("Failed to get tvshows:", error)
+                //show alert
+                return
+            }
+        }
     }
 
 
