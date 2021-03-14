@@ -12,8 +12,17 @@ class ListViewCell: UITableViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var tvShowViewModel: TvShowViewModel? {
+        didSet {
+            titleLabel.text = tvShowViewModel?.name
+            
+        }
+    }
+    
     func config(title:String? = "--") {
         titleLabel.text = title
     }
     
 }
+
+

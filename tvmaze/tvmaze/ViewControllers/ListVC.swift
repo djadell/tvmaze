@@ -12,12 +12,14 @@ class ListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate static let cellID = "ListViewCell"
     
+    var tvShowItems = [TvShowViewModel]()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tv show list"
         setupTableView()
+        fetchData()
     }
 
     func setupTableView() {
@@ -27,8 +29,18 @@ class ListVC: UIViewController {
     }
     
     fileprivate func fetchData() {
-        //FIXME: get API data
-        self.tableView.reloadData()
+        Service.shared.fetchFirtsTvShows { (tvShows) in
+            //refresh table view
+            print("[DEBUG] data:",tvShows ?? [])
+            self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
+            self.tableView.reloadData()
+        } failure: { (error) in
+            if let error = error {
+                print("Failed to get tvshows:", error)
+                //show alert
+                return
+            }
+        }
     }
 }
 
@@ -38,7 +50,7 @@ extension ListVC: UITableViewDataSource {
         return 120
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.tvShowItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,7 +58,9 @@ extension ListVC: UITableViewDataSource {
         guard let cell = cellCandidate as? ListViewCell else {
             return UITableViewCell()
         }
-        cell.config(title: String(indexPath.row))
+        let tvShowViewModel = self.tvShowItems[indexPath.row]
+        cell.tvShowViewModel = tvShowViewModel
+//        cell.config(title: String(indexPath.row))
         return cell
     }
 }
@@ -56,6 +70,7 @@ extension ListVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "detailvc") as? DetailVC {
+            let tvShowViewModel = self.tvShowItems[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

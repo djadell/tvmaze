@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-ch-Zf5">
-                                <rect key="frame" x="0.0" y="103" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -25,7 +25,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EOu-ch-Zf5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1uc-wM-dbV"/>
-                            <constraint firstItem="EOu-ch-Zf5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="WB4-vJ-J7k"/>
+                            <constraint firstItem="EOu-ch-Zf5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WB4-vJ-J7k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EOu-ch-Zf5" secondAttribute="trailing" id="Z7W-dE-P4y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EOu-ch-Zf5" secondAttribute="bottom" id="eoi-rY-7jY"/>
                         </constraints>
@@ -142,6 +142,8 @@
                     </view>
                     <connections>
                         <outlet property="posterImageView" destination="c7u-eZ-sOK" id="NVx-QB-Lv1"/>
+                        <outlet property="ratingLabel" destination="fgA-PU-iEt" id="6WT-U8-sTC"/>
+                        <outlet property="ratingProgressView" destination="t4H-85-HB5" id="aCN-b8-YV6"/>
                         <outlet property="ratingTitleLabel" destination="jfc-mx-hpC" id="Vac-N8-KUI"/>
                         <outlet property="summaryTextView" destination="4mC-OH-gxU" id="2C9-SV-82y"/>
                         <outlet property="titleLabel" destination="Vsu-yW-Asb" id="dfQ-u5-ixo"/>

@@ -12,13 +12,18 @@ class DetailVC: UIViewController {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingTitleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingProgressView: UIProgressView!
     @IBOutlet weak var summaryTextView: UITextView!
+    
+    
+    
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Show Title"
+        self.ratingTitleLabel.text = "Rating"
     }
 
 
