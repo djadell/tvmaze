@@ -38,6 +38,7 @@ class Service: NSObject {
             }
         }.resume()
     }
+    
     //MARK: - Private functions
     fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)){
         let urlString = "https://api.tvmaze.com/shows?page=\(page)"
