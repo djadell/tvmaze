@@ -35,7 +35,7 @@ class ListVC: UIViewController {
     fileprivate func fetchData() {
         //FIXME: Show progress animation...
         isLoadingList = true
-        Service.shared.fetchFirtsTvShows { (tvShows) in
+        ListVM.shared.fetchFirtsTvShows { (tvShows) in
             self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
             self.reloadData()
         } failure: { (error) in
@@ -52,7 +52,7 @@ class ListVC: UIViewController {
         self.isLoadingList = true
         print("DEBUG Loading More...")
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
-        Service.shared.fetchNextTvShows { (tvShows) in
+        ListVM.shared.fetchNextTvShows { (tvShows) in
             print("DEBUG Items: \(self.tvShowItems.count)")
             let moreTvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
             self.tvShowItems.append(contentsOf: moreTvShowItems)
