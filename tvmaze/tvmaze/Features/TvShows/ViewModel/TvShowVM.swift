@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
 
 struct TvShowViewModel {
     let name: String
@@ -20,7 +20,6 @@ struct TvShowViewModel {
         self.image = tvShow.image?.medium ?? ""
         self.summary = tvShow.summary ?? ""
     }
-    
 }
 
 

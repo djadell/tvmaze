@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370CEA6626029F6E003578D3 /* LoadingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CEA6426029F6E003578D3 /* LoadingTVC.swift */; };
+		370CEA6726029F6E003578D3 /* LoadingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370CEA6526029F6E003578D3 /* LoadingTVC.xib */; };
 		371E476625FE6E1B00817039 /* TvShowVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E476525FE6E1B00817039 /* TvShowVM.swift */; };
 		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
 		3721BB7225F6C63200DE969F /* ListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* ListTVC.xib */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		370CEA6426029F6E003578D3 /* LoadingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTVC.swift; sourceTree = "<group>"; };
+		370CEA6526029F6E003578D3 /* LoadingTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTVC.xib; sourceTree = "<group>"; };
 		371E476525FE6E1B00817039 /* TvShowVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowVM.swift; sourceTree = "<group>"; };
 		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
 		3721BB7125F6C63200DE969F /* ListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTVC.xib; sourceTree = "<group>"; };
@@ -92,12 +96,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3721BB6D25F6C1AB00DE969F /* Views */ = {
+		370CEA6E26029F87003578D3 /* ListViews */ = {
+			isa = PBXGroup;
+			children = (
+				3721BB7125F6C63200DE969F /* ListTVC.xib */,
+				370CEA6526029F6E003578D3 /* LoadingTVC.xib */,
+			);
+			name = ListViews;
+			sourceTree = "<group>";
+		};
+		370CEA7026029FF8003578D3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				370CEA7126029FFF003578D3 /* TvShows */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		370CEA7126029FFF003578D3 /* TvShows */ = {
+			isa = PBXGroup;
+			children = (
+				37618A1C25F5258D00546C08 /* Model */,
+				37618A1D25F5259400546C08 /* ViewModel */,
+				37618A1E25F5259D00546C08 /* ViewControllers */,
+				3721BB6D25F6C1AB00DE969F /* Views */,
+			);
+			path = TvShows;
+			sourceTree = "<group>";
+		};
+		370CEA722602A04C003578D3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3721BB6D25F6C1AB00DE969F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				370CEA6E26029F87003578D3 /* ListViews */,
 				376189E925F5203800546C08 /* Main.storyboard */,
-				3721BB7125F6C63200DE969F /* ListTVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +146,7 @@
 			children = (
 				376189E725F5203800546C08 /* ListVC.swift */,
 				3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */,
+				370CEA6426029F6E003578D3 /* LoadingTVC.swift */,
 			);
 			name = ListVC;
 			sourceTree = "<group>";
@@ -158,11 +198,9 @@
 		376189E225F5203800546C08 /* tvmaze */ = {
 			isa = PBXGroup;
 			children = (
-				37618A1C25F5258D00546C08 /* Model */,
+				370CEA722602A04C003578D3 /* Base */,
+				370CEA7026029FF8003578D3 /* Features */,
 				37597E7D25FEABE4002A226F /* Services */,
-				37618A1E25F5259D00546C08 /* ViewControllers */,
-				37618A1D25F5259400546C08 /* ViewModel */,
-				3721BB6D25F6C1AB00DE969F /* Views */,
 				37597E8E25FEC006002A226F /* Helpers */,
 				376189E325F5203800546C08 /* AppDelegate.swift */,
 				376189EF25F5203900546C08 /* Assets.xcassets */,
@@ -322,6 +360,7 @@
 				376189F325F5203900546C08 /* LaunchScreen.storyboard in Resources */,
 				376189F025F5203900546C08 /* Assets.xcassets in Resources */,
 				3721BB7225F6C63200DE969F /* ListTVC.xib in Resources */,
+				370CEA6726029F6E003578D3 /* LoadingTVC.xib in Resources */,
 				376189EB25F5203800546C08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +391,7 @@
 				376189E425F5203800546C08 /* AppDelegate.swift in Sources */,
 				3721BB8C25F6C90200DE969F /* ListTableViewCell.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
+				370CEA6626029F6E003578D3 /* LoadingTVC.swift in Sources */,
 				37597E9025FEC039002A226F /* Extensions.swift in Sources */,
 				37597E7F25FEABE4002A226F /* Service.swift in Sources */,
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,

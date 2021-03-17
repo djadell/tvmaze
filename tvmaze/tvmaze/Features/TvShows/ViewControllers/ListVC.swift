@@ -11,6 +11,7 @@ class ListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate static let cellID = "ListTVC"
+    fileprivate static let loadingCellID = "LoadingTVC"
     fileprivate var isLoadingList: Bool = false
     fileprivate var tvShowItems = [TvShowViewModel]()
     fileprivate let titlePage = "Tv show list"
@@ -26,6 +27,7 @@ class ListVC: UIViewController {
 
     func setupTableView() {
         tableView.register(UINib.init(nibName: String(describing: ListTVC.self), bundle: nil), forCellReuseIdentifier: ListVC.cellID)
+        tableView.register(UINib.init(nibName: String(describing: LoadingTVC.self), bundle: nil), forCellReuseIdentifier: ListVC.loadingCellID)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -49,6 +51,7 @@ class ListVC: UIViewController {
     fileprivate func fetchMoreData() {
         self.isLoadingList = true
         print("DEBUG Loading More...")
+        tableView.reloadSections(IndexSet(integer: 1), with: .none)
         Service.shared.fetchNextTvShows { (tvShows) in
             print("DEBUG Items: \(self.tvShowItems.count)")
             let moreTvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
@@ -76,22 +79,40 @@ class ListVC: UIViewController {
 
 extension ListVC: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tvShowItems.count
+        if section == 0 {
+            return self.tvShowItems.count
+        } else if section == 1 {
+            return 1
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellCandidate = tableView.dequeueReusableCell(withIdentifier: ListVC.cellID, for: indexPath)
-        guard let cell = cellCandidate as? ListTVC else {
-            return UITableViewCell()
+        if indexPath.section == 0 {
+            let cellCandidate = tableView.dequeueReusableCell(withIdentifier: ListVC.cellID, for: indexPath)
+            guard let cell = cellCandidate as? ListTVC else {
+                return UITableViewCell()
+            }
+            let tvShowViewModel = self.tvShowItems[indexPath.row]
+            cell.tvShowViewModel = tvShowViewModel
+            return cell
+        } else {
+            let cellCandidate = tableView.dequeueReusableCell(withIdentifier: ListVC.loadingCellID, for: indexPath)
+            guard let cell = cellCandidate as? LoadingTVC else {
+                return UITableViewCell()
+            }
+            cell.spinner.startAnimating()
+            return cell
         }
-        let tvShowViewModel = self.tvShowItems[indexPath.row]
-        cell.tvShowViewModel = tvShowViewModel
-        
-        return cell
     }
 }
 
