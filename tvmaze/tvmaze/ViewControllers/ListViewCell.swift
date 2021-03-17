@@ -18,11 +18,6 @@ class ListViewCell: UITableViewCell {
             posterImageView.getImageWithUrl(urlString: tvShowViewModel?.image ?? "")
         }
     }
-    
-    func config(title:String? = "--") {
-        titleLabel.text = title
-    }
-    
 }
 
 

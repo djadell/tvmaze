@@ -16,15 +16,28 @@ class DetailVC: UIViewController {
     @IBOutlet weak var ratingProgressView: UIProgressView!
     @IBOutlet weak var summaryTextView: UITextView!
     
-    
-    
+    var tvShowViewModel: TvShowViewModel?
+    fileprivate var progressValue:Float = 0.0
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.ratingTitleLabel.text = "Rating"
+        title = tvShowViewModel?.name
+        configUI()
     }
 
-
+    func configUI() {
+        self.titleLabel.text = tvShowViewModel?.name
+        self.posterImageView.getImageWithUrl(urlString: tvShowViewModel?.image ?? "")
+        self.ratingTitleLabel.text = "Ranking:"
+        self.ratingLabel.text = tvShowViewModel?.rating.description
+        if let tempValue = tvShowViewModel?.rating ?? 0.0 {
+            progressValue = tempValue / 10
+        }
+        self.ratingProgressView.setProgress(progressValue, animated: true)
+        
+        print("ProgressV: \(progressValue) Rating: \(String(describing: tvShowViewModel?.rating.description))")
+        print("Summary:\n\n\(String(describing: tvShowViewModel?.summary))")
+    }
+    
 }
