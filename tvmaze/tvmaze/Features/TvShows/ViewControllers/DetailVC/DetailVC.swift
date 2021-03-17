@@ -22,22 +22,25 @@ class DetailVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = tvShowViewModel?.name
         configUI()
     }
 
     func configUI() {
-        self.titleLabel.text = tvShowViewModel?.name
+        ///Title
+        title = tvShowViewModel?.name
+        self.titleLabel.text = "Lang: \(tvShowViewModel?.language ?? "")"
+        ///Poster image
         self.posterImageView.getImageWithUrl(urlString: tvShowViewModel?.image ?? "")
+        ///Rating
         self.ratingTitleLabel.text = "Ranking:"
         self.ratingLabel.text = tvShowViewModel?.rating.description
+        ///Rating value
         if let tempValue = tvShowViewModel?.rating ?? 0.0 {
             progressValue = tempValue / 10
         }
         self.ratingProgressView.setProgress(progressValue, animated: true)
-        
-        print("ProgressV: \(progressValue) Rating: \(String(describing: tvShowViewModel?.rating.description))")
-        print("Summary:\n\n\(String(describing: tvShowViewModel?.summary))")
+        ///Summary
+        self.summaryTextView.attributedText = tvShowViewModel?.summary.htmlToAttributedString
     }
     
 }

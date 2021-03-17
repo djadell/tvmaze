@@ -12,6 +12,7 @@ struct DBtvshow: Decodable {
     let id: Int?
     let url: String?
     let name: String?
+    let language: String?
     let rating: Rating?
     let image: Image?
     let summary: String?

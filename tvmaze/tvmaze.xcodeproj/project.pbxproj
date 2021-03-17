@@ -25,6 +25,7 @@
 		376189F325F5203900546C08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376189F125F5203900546C08 /* LaunchScreen.storyboard */; };
 		376189FE25F5203A00546C08 /* tvmazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189FD25F5203A00546C08 /* tvmazeTests.swift */; };
 		37618A0925F5203A00546C08 /* tvmazeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37618A0825F5203A00546C08 /* tvmazeUITests.swift */; };
+		376EF52B2602A82D00698DE1 /* ListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376EF52A2602A82D00698DE1 /* ListVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		37618A0425F5203A00546C08 /* tvmazeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tvmazeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37618A0825F5203A00546C08 /* tvmazeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvmazeUITests.swift; sourceTree = "<group>"; };
 		37618A0A25F5203A00546C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376EF52A2602A82D00698DE1 /* ListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				371E476525FE6E1B00817039 /* TvShowVM.swift */,
+				376EF52A2602A82D00698DE1 /* ListVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				3721BB8C25F6C90200DE969F /* ListTableViewCell.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
 				370CEA6626029F6E003578D3 /* LoadingTVC.swift in Sources */,
+				376EF52B2602A82D00698DE1 /* ListVM.swift in Sources */,
 				37597E9025FEC039002A226F /* Extensions.swift in Sources */,
 				37597E7F25FEABE4002A226F /* Service.swift in Sources */,
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,
