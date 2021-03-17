@@ -11,13 +11,15 @@ class ListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate static let cellID = "ListViewCell"
-    
-    var tvShowItems = [TvShowViewModel]()
+    fileprivate var isLoadingList: Bool = false
+    fileprivate var tvShowItems = [TvShowViewModel]()
+    fileprivate let titlePage = "Tv show list"
+    fileprivate var actualPageLoaded = 1
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Tv show list"
+        title = titlePage
         setupTableView()
         fetchData()
     }
@@ -30,16 +32,45 @@ class ListVC: UIViewController {
     
     fileprivate func fetchData() {
         //FIXME: Show progress animation...
+        isLoadingList = true
         Service.shared.fetchFirtsTvShows { (tvShows) in
             self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
-            self.tableView.reloadData()
+            self.reloadData()
         } failure: { (error) in
             if let error = error {
                 print("Failed to get tvshows:", error)
                 //FIXME: show error alert
-                return
             }
+            self.isLoadingList = false
+            return
         }
+    }
+    
+    fileprivate func fetchMoreData() {
+        self.isLoadingList = true
+        print("DEBUG Loading More...")
+        Service.shared.fetchNextTvShows { (tvShows) in
+            print("DEBUG Items: \(self.tvShowItems.count)")
+            let moreTvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
+            self.tvShowItems.append(contentsOf: moreTvShowItems)
+            print("DEBUGItems: \(self.tvShowItems.count)")
+            self.actualPageLoaded += 1
+            self.reloadData()
+        } failure: { (error) in
+            if let error = error {
+                print("Failed to get more tvshows:", error)
+                //FIXME: show error alert
+            }
+            self.isLoadingList = false
+            return
+        }
+
+    }
+    
+    fileprivate func reloadData() {
+        title = "\(titlePage)  - Page: \(actualPageLoaded)"
+        self.tableView.reloadData()
+        self.isLoadingList = false
     }
 }
 
@@ -70,10 +101,15 @@ extension ListVC: UITableViewDelegate {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "detailvc") as? DetailVC {
             let tvShowViewModel = self.tvShowItems[indexPath.row]
-            //FIXME: Pending to setup model
+            vc.tvShowViewModel = tvShowViewModel
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingList){
+            self.fetchMoreData()
+        }
+    }
 }
 
