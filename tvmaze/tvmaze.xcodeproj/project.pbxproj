@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		371E476625FE6E1B00817039 /* TvShowVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E476525FE6E1B00817039 /* TvShowVM.swift */; };
 		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
-		3721BB7225F6C63200DE969F /* ListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* ListViewCell.xib */; };
+		3721BB7225F6C63200DE969F /* ListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* ListTVC.xib */; };
 		3721BB8225F6C87B00DE969F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8125F6C87B00DE969F /* DetailVC.swift */; };
-		3721BB8C25F6C90200DE969F /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8B25F6C90200DE969F /* ListViewCell.swift */; };
+		3721BB8C25F6C90200DE969F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */; };
 		37597E7F25FEABE4002A226F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37597E7E25FEABE4002A226F /* Service.swift */; };
 		37597E9025FEC039002A226F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37597E8F25FEC039002A226F /* Extensions.swift */; };
 		376189E425F5203800546C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E325F5203800546C08 /* AppDelegate.swift */; };
@@ -45,9 +45,9 @@
 /* Begin PBXFileReference section */
 		371E476525FE6E1B00817039 /* TvShowVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowVM.swift; sourceTree = "<group>"; };
 		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
-		3721BB7125F6C63200DE969F /* ListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewCell.xib; sourceTree = "<group>"; };
+		3721BB7125F6C63200DE969F /* ListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTVC.xib; sourceTree = "<group>"; };
 		3721BB8125F6C87B00DE969F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		3721BB8B25F6C90200DE969F /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		37597E7E25FEABE4002A226F /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		37597E8F25FEC039002A226F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		376189E025F5203800546C08 /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +97,7 @@
 			children = (
 				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
 				376189E925F5203800546C08 /* Main.storyboard */,
-				3721BB7125F6C63200DE969F /* ListViewCell.xib */,
+				3721BB7125F6C63200DE969F /* ListTVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				376189E725F5203800546C08 /* ListVC.swift */,
-				3721BB8B25F6C90200DE969F /* ListViewCell.swift */,
+				3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */,
 			);
 			name = ListVC;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			files = (
 				376189F325F5203900546C08 /* LaunchScreen.storyboard in Resources */,
 				376189F025F5203900546C08 /* Assets.xcassets in Resources */,
-				3721BB7225F6C63200DE969F /* ListViewCell.xib in Resources */,
+				3721BB7225F6C63200DE969F /* ListTVC.xib in Resources */,
 				376189EB25F5203800546C08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +350,7 @@
 				376189E825F5203800546C08 /* ListVC.swift in Sources */,
 				3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */,
 				376189E425F5203800546C08 /* AppDelegate.swift in Sources */,
-				3721BB8C25F6C90200DE969F /* ListViewCell.swift in Sources */,
+				3721BB8C25F6C90200DE969F /* ListTableViewCell.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
 				37597E9025FEC039002A226F /* Extensions.swift in Sources */,
 				37597E7F25FEABE4002A226F /* Service.swift in Sources */,

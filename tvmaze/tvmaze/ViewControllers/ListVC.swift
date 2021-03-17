@@ -10,7 +10,7 @@ import UIKit
 class ListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    fileprivate static let cellID = "ListViewCell"
+    fileprivate static let cellID = "ListTVC"
     fileprivate var isLoadingList: Bool = false
     fileprivate var tvShowItems = [TvShowViewModel]()
     fileprivate let titlePage = "Tv show list"
@@ -25,7 +25,7 @@ class ListVC: UIViewController {
     }
 
     func setupTableView() {
-        tableView.register(UINib.init(nibName: String(describing: ListViewCell.self), bundle: nil), forCellReuseIdentifier: ListVC.cellID)
+        tableView.register(UINib.init(nibName: String(describing: ListTVC.self), bundle: nil), forCellReuseIdentifier: ListVC.cellID)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -85,7 +85,7 @@ extension ListVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellCandidate = tableView.dequeueReusableCell(withIdentifier: ListVC.cellID, for: indexPath)
-        guard let cell = cellCandidate as? ListViewCell else {
+        guard let cell = cellCandidate as? ListTVC else {
             return UITableViewCell()
         }
         let tvShowViewModel = self.tvShowItems[indexPath.row]
