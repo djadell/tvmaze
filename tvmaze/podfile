@@ -1,0 +1,7 @@
+platform :ios, '14.0'
+
+target 'tvmaze' do
+    use_frameworks!
+
+    pod 'ProgressHUD', '~> 13.4'
+end

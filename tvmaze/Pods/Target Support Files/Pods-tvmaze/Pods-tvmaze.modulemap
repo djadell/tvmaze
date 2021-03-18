@@ -1,0 +1,6 @@
+framework module Pods_tvmaze {
+  umbrella header "Pods-tvmaze-umbrella.h"
+
+  export *
+  module * { export * }
+}
