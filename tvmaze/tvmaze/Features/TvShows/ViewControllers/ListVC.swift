@@ -13,6 +13,7 @@ class ListVC: BaseViewController {
     
     fileprivate static let cellID = "ListTVC"
     fileprivate static let loadingCellID = "LoadingTVC"
+    fileprivate var isFirstLoadingList: Bool = false
     fileprivate var isLoadingList: Bool = false
     fileprivate var tvShowItems = [TvShowViewModel]()
     fileprivate let titlePage = "Tv show list"
@@ -24,6 +25,16 @@ class ListVC: BaseViewController {
         title = titlePage
         setupTableView()
         fetchData()
+        
+        ListVM.shared.netStatusChangeHandler = {
+            DispatchQueue.main.async { [unowned self] in
+                if self.isFirstLoadingList {
+                    fetchData()
+                } else {
+                    self.reloadData()
+                }
+            }
+        }
     }
 
     func setupTableView() {
@@ -35,10 +46,12 @@ class ListVC: BaseViewController {
     
     fileprivate func fetchData() {
         showProgress(text: "Loading...")
+        isFirstLoadingList = true
         isLoadingList = true
         ListVM.shared.fetchFirtsTvShows { (tvShows) in
             self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
             self.reloadData()
+            self.isFirstLoadingList = false
             self.hideProgress()
         } failure: { (error) in
             self.hideProgress()

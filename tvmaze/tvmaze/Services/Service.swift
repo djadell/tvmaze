@@ -20,38 +20,40 @@ class Service: NSObject {
     }
     
     //MARK: - Public functions
-    func fetchFirtsTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
+    func fetchFirtsTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (ErrorApp?)-> Void)) {
         if NetStatus.shared.isConnected {
             getTvShowsByPage(page: page, success: success, failure: failure)
         } else {
+            failure(ErrorApp.noInternetConection)
             print("[DEBUG][\(String(describing: Service.self))] No internet connection!")
         }
     }
     
-    func fetchNextTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
+    func fetchNextTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (ErrorApp?)-> Void)) {
         if NetStatus.shared.isConnected {
             page+=1
             getTvShowsByPage(page: page, success: success, failure: failure)
         } else {
+            failure(ErrorApp.noInternetConection)
             print("[DEBUG][\(String(describing: Service.self))] No internet connection!")
         }
     }
     
-    func getImageWithUrl(urlString: String, success: (@escaping (UIImage) -> Void), failure: (@escaping (Error?)-> Void)) {
+    func getImageWithUrl(urlString: String, success: (@escaping (UIImage) -> Void), failure: (@escaping (ErrorApp?)-> Void)) {
         if NetStatus.shared.isConnected {
             self.downloadImageWithUrl(urlString: urlString, success: success, failure: failure)
         } else {
-            print("[DEBUG][\(String(describing: Service.self))] No internet connection!")
+            print("[DEBUG][\(String(describing: Service.self))] No internet connection for Image!")
         }
     }
     
     //MARK: - Private functions
-    fileprivate func downloadImageWithUrl(urlString: String, success: (@escaping (UIImage) -> Void), failure: (@escaping (Error?)-> Void)) {
+    fileprivate func downloadImageWithUrl(urlString: String, success: (@escaping (UIImage) -> Void), failure: (@escaping (ErrorApp?)-> Void)) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 DispatchQueue.main.async {
-                    failure(error)
+                    failure(ErrorApp.downloadImage)
                 }
                 print("[\(String(describing: Service.self))] Failed to get remote image", error)
                 return
@@ -66,14 +68,14 @@ class Service: NSObject {
         }.resume()
     }
     
-    fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)){
+    fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (ErrorApp?)-> Void)){
         let urlString = baseURL+showsIndexURL+"?page=\(page)"
         
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 DispatchQueue.main.async {
-                    failure(error)
+                    failure(ErrorApp.apiError)
                 }
                 print("[\(String(describing: Service.self))] Failed to fetch Firts TvShows:", error)
                 return
@@ -87,7 +89,7 @@ class Service: NSObject {
                 }
             } catch let jsonError {
                 DispatchQueue.main.async {
-                    failure(jsonError)
+                    failure(ErrorApp.other)
                 }
                 print("[\(String(describing: Service.self))] Failed to decode: ", jsonError)
             }
