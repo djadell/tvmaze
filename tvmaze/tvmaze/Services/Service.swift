@@ -25,7 +25,9 @@ class Service: NSObject {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
                 print("[\(String(describing: Service.self))] Failed to get remote image", error)
                 return
             }
@@ -41,11 +43,14 @@ class Service: NSObject {
     
     //MARK: - Private functions
     fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)){
-        let urlString = "https://api.tvmaze.com/shows?page=\(page)"
+        let urlString = baseURL+showsIndexURL+"?page=\(page)"
+        
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
                 print("[\(String(describing: Service.self))] Failed to fetch Firts TvShows:", error)
                 return
             }
@@ -57,7 +62,9 @@ class Service: NSObject {
                     success(tvShows)
                 }
             } catch let jsonError {
-                failure(jsonError)
+                DispatchQueue.main.async {
+                    failure(jsonError)
+                }
                 print("[\(String(describing: Service.self))] Failed to decode: ", jsonError)
             }
         }.resume()
