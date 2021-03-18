@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+class DetailVC: BaseViewController {
 
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3709238E2602CAEC00C4FD17 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709238D2602CAEC00C4FD17 /* BaseViewController.swift */; };
+		370923962602D1D000C4FD17 /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370923952602D1D000C4FD17 /* ConstantsAPI.swift */; };
 		370CEA6626029F6E003578D3 /* LoadingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370CEA6426029F6E003578D3 /* LoadingTVC.swift */; };
 		370CEA6726029F6E003578D3 /* LoadingTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370CEA6526029F6E003578D3 /* LoadingTVC.xib */; };
 		371E476625FE6E1B00817039 /* TvShowVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371E476525FE6E1B00817039 /* TvShowVM.swift */; };
 		3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB6225F6A33000DE969F /* DBtvshow.swift */; };
 		3721BB7225F6C63200DE969F /* ListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3721BB7125F6C63200DE969F /* ListTVC.xib */; };
 		3721BB8225F6C87B00DE969F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8125F6C87B00DE969F /* DetailVC.swift */; };
-		3721BB8C25F6C90200DE969F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */; };
+		3721BB8C25F6C90200DE969F /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721BB8B25F6C90200DE969F /* ListTVC.swift */; };
 		37597E7F25FEABE4002A226F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37597E7E25FEABE4002A226F /* Service.swift */; };
 		37597E9025FEC039002A226F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37597E8F25FEC039002A226F /* Extensions.swift */; };
 		376189E425F5203800546C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189E325F5203800546C08 /* AppDelegate.swift */; };
@@ -46,13 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3709238D2602CAEC00C4FD17 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		370923952602D1D000C4FD17 /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
 		370CEA6426029F6E003578D3 /* LoadingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTVC.swift; sourceTree = "<group>"; };
 		370CEA6526029F6E003578D3 /* LoadingTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTVC.xib; sourceTree = "<group>"; };
 		371E476525FE6E1B00817039 /* TvShowVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowVM.swift; sourceTree = "<group>"; };
 		3721BB6225F6A33000DE969F /* DBtvshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBtvshow.swift; sourceTree = "<group>"; };
 		3721BB7125F6C63200DE969F /* ListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTVC.xib; sourceTree = "<group>"; };
 		3721BB8125F6C87B00DE969F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		3721BB8B25F6C90200DE969F /* ListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
 		37597E7E25FEABE4002A226F /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		37597E8F25FEC039002A226F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		376189E025F5203800546C08 /* tvmaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvmaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3709238B2602CAB100C4FD17 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3709238D2602CAEC00C4FD17 /* BaseViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3709238C2602CABA00C4FD17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		370CEA6E26029F87003578D3 /* ListViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +149,8 @@
 		370CEA722602A04C003578D3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				376189F125F5203900546C08 /* LaunchScreen.storyboard */,
+				3709238C2602CABA00C4FD17 /* Views */,
+				3709238B2602CAB100C4FD17 /* ViewControllers */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -147,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				376189E725F5203800546C08 /* ListVC.swift */,
-				3721BB8B25F6C90200DE969F /* ListTableViewCell.swift */,
+				3721BB8B25F6C90200DE969F /* ListTVC.swift */,
 				370CEA6426029F6E003578D3 /* LoadingTVC.swift */,
 			);
 			name = ListVC;
@@ -173,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				37597E8F25FEC039002A226F /* Extensions.swift */,
+				370923952602D1D000C4FD17 /* ConstantsAPI.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -389,10 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3709238E2602CAEC00C4FD17 /* BaseViewController.swift in Sources */,
 				376189E825F5203800546C08 /* ListVC.swift in Sources */,
 				3721BB6325F6A33000DE969F /* DBtvshow.swift in Sources */,
 				376189E425F5203800546C08 /* AppDelegate.swift in Sources */,
-				3721BB8C25F6C90200DE969F /* ListTableViewCell.swift in Sources */,
+				3721BB8C25F6C90200DE969F /* ListTVC.swift in Sources */,
 				376189EE25F5203800546C08 /* tvmaze.xcdatamodeld in Sources */,
 				370CEA6626029F6E003578D3 /* LoadingTVC.swift in Sources */,
 				376EF52B2602A82D00698DE1 /* ListVM.swift in Sources */,
@@ -400,6 +423,7 @@
 				37597E7F25FEABE4002A226F /* Service.swift in Sources */,
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,
 				3721BB8225F6C87B00DE969F /* DetailVC.swift in Sources */,
+				370923962602D1D000C4FD17 /* ConstantsAPI.swift in Sources */,
 				371E476625FE6E1B00817039 /* TvShowVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

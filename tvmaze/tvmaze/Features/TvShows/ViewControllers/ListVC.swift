@@ -7,9 +7,10 @@
 
 import UIKit
 
-class ListVC: UIViewController {
+class ListVC: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     fileprivate static let cellID = "ListTVC"
     fileprivate static let loadingCellID = "LoadingTVC"
     fileprivate var isLoadingList: Bool = false
@@ -39,10 +40,7 @@ class ListVC: UIViewController {
             self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
             self.reloadData()
         } failure: { (error) in
-            if let error = error {
-                print("Failed to get tvshows:", error)
-                //FIXME: show error alert
-            }
+            self.showAler(title: "Error", message: error?.localizedDescription)
             self.isLoadingList = false
             return
         }
@@ -50,20 +48,14 @@ class ListVC: UIViewController {
     
     fileprivate func fetchMoreData() {
         self.isLoadingList = true
-        print("DEBUG Loading More...")
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
         ListVM.shared.fetchNextTvShows { (tvShows) in
-            print("DEBUG Items: \(self.tvShowItems.count)")
             let moreTvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
             self.tvShowItems.append(contentsOf: moreTvShowItems)
-            print("DEBUGItems: \(self.tvShowItems.count)")
             self.actualPageLoaded += 1
             self.reloadData()
         } failure: { (error) in
-            if let error = error {
-                print("Failed to get more tvshows:", error)
-                //FIXME: show error alert
-            }
+            self.showAler(title: "Error", message: error?.localizedDescription)
             self.isLoadingList = false
             return
         }
