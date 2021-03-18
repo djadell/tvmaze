@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		376189FE25F5203A00546C08 /* tvmazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376189FD25F5203A00546C08 /* tvmazeTests.swift */; };
 		37618A0925F5203A00546C08 /* tvmazeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37618A0825F5203A00546C08 /* tvmazeUITests.swift */; };
 		376EF52B2602A82D00698DE1 /* ListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376EF52A2602A82D00698DE1 /* ListVM.swift */; };
+		37ED88E42603876800727149 /* NetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED88E32603876800727149 /* NetStatus.swift */; };
 		62A5A5333C328DB9ACE91420 /* Pods_tvmaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A729ABC59A66E8FEA2060EE /* Pods_tvmaze.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		37618A0825F5203A00546C08 /* tvmazeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvmazeUITests.swift; sourceTree = "<group>"; };
 		37618A0A25F5203A00546C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		376EF52A2602A82D00698DE1 /* ListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVM.swift; sourceTree = "<group>"; };
+		37ED88E32603876800727149 /* NetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatus.swift; sourceTree = "<group>"; };
 		3A729ABC59A66E8FEA2060EE /* Pods_tvmaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvmaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBE6E911F942689FCF6E224 /* Pods-tvmaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvmaze.debug.xcconfig"; path = "Target Support Files/Pods-tvmaze/Pods-tvmaze.debug.xcconfig"; sourceTree = "<group>"; };
 		F2B7C45DCDD0CF39B9CF631C /* Pods-tvmaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvmaze.release.xcconfig"; path = "Target Support Files/Pods-tvmaze/Pods-tvmaze.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				37597E7E25FEABE4002A226F /* Service.swift */,
+				37ED88E32603876800727149 /* NetStatus.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,7 +303,6 @@
 				6DBE6E911F942689FCF6E224 /* Pods-tvmaze.debug.xcconfig */,
 				F2B7C45DCDD0CF39B9CF631C /* Pods-tvmaze.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -493,6 +495,7 @@
 				376189E625F5203800546C08 /* SceneDelegate.swift in Sources */,
 				3721BB8225F6C87B00DE969F /* DetailVC.swift in Sources */,
 				370923962602D1D000C4FD17 /* ConstantsAPI.swift in Sources */,
+				37ED88E42603876800727149 /* NetStatus.swift in Sources */,
 				371E476625FE6E1B00817039 /* TvShowVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
