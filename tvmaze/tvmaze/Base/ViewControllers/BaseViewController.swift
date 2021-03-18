@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class BaseViewController: UIViewController {
     
@@ -16,6 +17,26 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //MARK: - Progress
+    func showProgress() {
+        showProgress(text: nil)
+    }
+    
+    func showProgress(text: String?) {
+        ProgressHUD.animationType = .multipleCirclePulse
+        ProgressHUD.colorAnimation = .systemBlue
+        if let text = text, text.count > 0 {
+            ProgressHUD.show(text)
+        } else {
+            ProgressHUD.show()
+        }
+    }
+    
+    func hideProgress() {
+        ProgressHUD.dismiss()
+    }
+    
+    //MARK: - Alerts
     func showAler(title: String?, message: String?) {
         showAlert(title: title, message: title, actions: [UIAlertAction(title: "OK", style: .cancel, handler: nil)])
     }

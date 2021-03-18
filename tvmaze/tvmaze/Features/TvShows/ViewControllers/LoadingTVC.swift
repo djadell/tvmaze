@@ -14,6 +14,7 @@ class LoadingTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        spinner.color = .systemBlue
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

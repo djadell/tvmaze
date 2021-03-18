@@ -34,12 +34,14 @@ class ListVC: BaseViewController {
     }
     
     fileprivate func fetchData() {
-        //FIXME: Show progress animation...
+        showProgress(text: "Loading...")
         isLoadingList = true
         ListVM.shared.fetchFirtsTvShows { (tvShows) in
             self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
             self.reloadData()
+            self.hideProgress()
         } failure: { (error) in
+            self.hideProgress()
             self.showAler(title: "Error", message: error?.localizedDescription)
             self.isLoadingList = false
             return

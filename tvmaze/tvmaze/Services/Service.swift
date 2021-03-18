@@ -58,6 +58,7 @@ class Service: NSObject {
             guard let data = data else { return }
             do {
                 let tvShows = try JSONDecoder().decode([DBtvshow].self, from: data)
+                sleep(180)
                 DispatchQueue.main.async {
                     success(tvShows)
                 }
