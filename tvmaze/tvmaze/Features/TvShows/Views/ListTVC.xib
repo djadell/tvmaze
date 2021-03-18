@@ -3,53 +3,45 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ListTVC" customModule="tvmaze" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-iY-kOC">
-                    <rect key="frame" x="0.0" y="0.0" width="119" height="120"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="119" id="uO0-fY-nBM"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-mq-uoC">
-                    <rect key="frame" x="129" y="50" width="275" height="20.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="aIQ-iY-kOC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="OsD-8t-QTg"/>
-                <constraint firstItem="oz5-mq-uoC" firstAttribute="leading" secondItem="aIQ-iY-kOC" secondAttribute="trailing" constant="10" id="Q51-B5-33S"/>
-                <constraint firstItem="oz5-mq-uoC" firstAttribute="centerY" secondItem="aIQ-iY-kOC" secondAttribute="centerY" id="T2Y-75-BAm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="aIQ-iY-kOC" secondAttribute="bottom" id="Zhf-cg-p4V"/>
-                <constraint firstItem="aIQ-iY-kOC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gdb-qO-Cu0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oz5-mq-uoC" secondAttribute="trailing" constant="10" id="qqZ-F1-4OI"/>
-            </constraints>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sXT-89-YmA" customClass="ListTVC" customModule="tvmaze" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sXT-89-YmA" id="FTt-t1-kw9">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-iY-kOC">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="YYD-YF-xvc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz5-mq-uoC">
+                        <rect key="frame" x="128" y="25" width="276" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aIQ-iY-kOC" firstAttribute="leading" secondItem="FTt-t1-kw9" secondAttribute="leading" id="O8J-SM-D1u"/>
+                    <constraint firstAttribute="trailing" secondItem="oz5-mq-uoC" secondAttribute="trailing" constant="10" id="RXs-2T-hBP"/>
+                    <constraint firstAttribute="bottom" secondItem="aIQ-iY-kOC" secondAttribute="bottom" id="aSh-uz-vBn"/>
+                    <constraint firstItem="oz5-mq-uoC" firstAttribute="leading" secondItem="aIQ-iY-kOC" secondAttribute="trailing" constant="8" symbolic="YES" id="bzP-dW-jBJ"/>
+                    <constraint firstItem="aIQ-iY-kOC" firstAttribute="top" secondItem="FTt-t1-kw9" secondAttribute="top" id="cHt-R4-xDz"/>
+                    <constraint firstItem="oz5-mq-uoC" firstAttribute="centerY" secondItem="aIQ-iY-kOC" secondAttribute="centerY" id="hFP-bd-9Ad"/>
+                </constraints>
+            </tableViewCellContentView>
             <connections>
-                <outlet property="posterImageView" destination="aIQ-iY-kOC" id="xVc-cr-aiV"/>
-                <outlet property="titleLabel" destination="oz5-mq-uoC" id="Y1q-OJ-1dp"/>
+                <outlet property="posterImageView" destination="aIQ-iY-kOC" id="rq7-O4-DKN"/>
+                <outlet property="titleLabel" destination="oz5-mq-uoC" id="Jsv-NJ-leO"/>
             </connections>
-            <point key="canvasLocation" x="142.02898550724638" y="-145.98214285714286"/>
-        </view>
+            <point key="canvasLocation" x="50.724637681159422" y="-200.22321428571428"/>
+        </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
