@@ -12,11 +12,11 @@ class Service: NSObject {
     var page: Int = 1
     
     //MARK: - Public functions
-    func fetchFirtsTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
+    func fetchFirtsTvShows(success: (@escaping ([DBtvshow]) -> Void), failure: (@escaping (Error?)-> Void)) {
         getTvShowsByPage(page: page, success: success, failure: failure)
     }
     
-    func fetchNextTvShows(success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)) {
+    func fetchNextTvShows(success: (@escaping ([DBtvshow]) -> Void), failure: (@escaping (Error?)-> Void)) {
         page+=1
         getTvShowsByPage(page: page, success: success, failure: failure)
     }
@@ -42,7 +42,7 @@ class Service: NSObject {
     }
     
     //MARK: - Private functions
-    fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]?) -> Void), failure: (@escaping (Error?)-> Void)){
+    fileprivate func getTvShowsByPage(page: Int, success: (@escaping ([DBtvshow]) -> Void), failure: (@escaping (Error?)-> Void)){
         let urlString = baseURL+showsIndexURL+"?page=\(page)"
         
         guard let url = URL(string: urlString) else { return }

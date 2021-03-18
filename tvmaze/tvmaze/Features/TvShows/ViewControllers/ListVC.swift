@@ -37,7 +37,7 @@ class ListVC: BaseViewController {
         showProgress(text: "Loading...")
         isLoadingList = true
         ListVM.shared.fetchFirtsTvShows { (tvShows) in
-            self.tvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
+            self.tvShowItems = tvShows.map({return TvShowViewModel(tvShow: $0)})
             self.reloadData()
             self.hideProgress()
         } failure: { (error) in
@@ -52,7 +52,7 @@ class ListVC: BaseViewController {
         self.isLoadingList = true
         tableView.reloadSections(IndexSet(integer: 1), with: .none)
         ListVM.shared.fetchNextTvShows { (tvShows) in
-            let moreTvShowItems = tvShows?.map({return TvShowViewModel(tvShow: $0)}) ?? []
+            let moreTvShowItems = tvShows.map({return TvShowViewModel(tvShow: $0)})
             self.tvShowItems.append(contentsOf: moreTvShowItems)
             self.actualPageLoaded += 1
             self.reloadData()
